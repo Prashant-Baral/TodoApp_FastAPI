@@ -1,0 +1,13 @@
+from fastapi.testclient import TestClient
+from starlette.status import HTTP_200_OK
+from ..main import app
+from fastapi import status
+
+client = TestClient(app)
+
+def test_return_health_check():
+    response = client.get('/healthy')
+    assert response.status_code == HTTP_200_OK
+    assert response.json() == {'status' : 'Healthy'}
+
+
