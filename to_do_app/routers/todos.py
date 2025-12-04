@@ -9,7 +9,7 @@ from routers.auth import get_current_user
 from fastapi.templating import Jinja2Templates
 from starlette.responses import RedirectResponse
 
-templates = Jinja2Templates(directory="to_do_app/templates")
+templates = Jinja2Templates(directory="templates")
 
 router = APIRouter(
     prefix="/todos",
