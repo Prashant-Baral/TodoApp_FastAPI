@@ -1,3 +1,4 @@
+from pathlib import Path
 from fastapi import FastAPI,Request,status
 from models import Base
 from database import engine
@@ -10,7 +11,10 @@ app = FastAPI()
 #Base.metadata.create_all(bind=engine)
 
 
-app.mount("/static", StaticFiles(directory="to_do_app/static"), name="static")
+static_dir = Path(__file__).parent / "static"
+if static_dir.exists():
+    app.mount("/static", StaticFiles(directory="static"), name="static")
+
 
 @app.get("/")
 def test(request:Request):
