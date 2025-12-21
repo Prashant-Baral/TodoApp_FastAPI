@@ -2,7 +2,7 @@ from functools import lru_cache
 from pydantic_settings import BaseSettings
 
 class Settings(BaseSettings):
-    ENVIRONMENT = "PRODUCTION"
+    ENVIRONMENT:str = "PRODUCTION"
     JWT_SECRET:str
     JWT_ALGORITHM:str
     ACCESS_TOKEN_EXPIRE_MINUTES:int=10
