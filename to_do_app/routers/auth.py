@@ -9,11 +9,12 @@ from models import Users
 from fastapi.security import OAuth2PasswordRequestForm,OAuth2PasswordBearer
 from jose import jwt, JWTError
 from fastapi.templating import Jinja2Templates
+from config import settings
 
 router = APIRouter(prefix="/auth", tags=["Auth"])
 
-SECRET_KEY = '1536434b6789725e8151d4aaf8f1493d86826434a1083751849017c82d28f730'
-ALGORITHM = "HS256"
+SECRET_KEY = settings.JWT_SECRET
+ALGORITHM = settings.JWT_ALGORITHM
 
 bcrypt_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 oauth2_bearer = OAuth2PasswordBearer(tokenUrl="auth/token")
@@ -120,6 +121,6 @@ async def login_for_access_token(form_data : Annotated[OAuth2PasswordRequestForm
         username=user.username,
         user_id=user.id,
         role=user.role,
-        expires_delta=timedelta(minutes=10)
+        expires_delta=timedelta(settings.ACCESS_TOKEN_EXPIRE_MINUTES)
     )
     return {'access_token': token, 'token_type': 'bearer'}
