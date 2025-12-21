@@ -19,7 +19,6 @@
 
 A full-featured, production-ready RESTful API for managing todos with robust user authentication, built using modern Python technologies. This project demonstrates industry best practices in API development, database management, and secure authentication.
 
-> **📚 Learning Project**: Developed as part of [Eric Roby's comprehensive FastAPI course](https://www.udemy.com/course/fastapi-the-complete-course/) on Udemy, showcasing real-world application development from concept to deployment.
 
 ### 🎯 Key Highlights
 
@@ -362,13 +361,10 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ## 🙏 Acknowledgments
 
 <div align="center">
-
-### Special Thanks
-
-**Eric Roby** - For his comprehensive FastAPI course that guided this project
+Eric Roby - For his comprehensive FastAPI course that guided this project
 
 [![Udemy Course](https://img.shields.io/badge/Udemy-FastAPI_Course-A435F0?style=for-the-badge&logo=udemy&logoColor=white)](https://www.udemy.com/course/fastapi-the-complete-course/)
-
+---
 ### Built With Amazing Tools
 
 - [FastAPI Documentation](https://fastapi.tiangolo.com/)
